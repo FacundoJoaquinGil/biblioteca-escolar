@@ -1,0 +1,77 @@
+{
+  "libro": [
+    {
+      "id": 1,
+      "titulo": "El Alquimista",
+      "autor": "Paulo Coelho"
+    },
+    {
+      "titulo": "Juego de tronos",
+      "autor": "maximo",
+      "id": 2
+    },
+    {
+      "titulo": "Los ojos del perro siberiano",
+      "autor": "Antonio Santa Ana",
+      "id": 3
+    },
+    {
+      "titulo": "los 3 chanchitos 2.0",
+      "autor": "joaquin fuentes",
+      "id": 4
+    },
+    {
+      "titulo": "sdsd",
+      "autor": "sdsd",
+      "id": 5
+    }
+  ],
+  "prestamo": [
+    {
+      "id": 1,
+      "fechaEntrega": "13/11/2022",
+      "fechaDevolucion": "13/12/2022",
+      "alumnoId": 1,
+      "libroId": 1
+    },
+    {
+      "fechaEntrega": "2022-11-13",
+      "fechaDevolucion": "2022-11-10",
+      "libroId": "2",
+      "alumnoId": "2",
+      "id": 2
+    }
+  ],
+  "alumno": [
+    {
+      "id": 1,
+      "nombre": "Joaquin Fuentes",
+      "dni": "37423893",
+      "direccion": "España 2456"
+    },
+    {
+      "nombre": "Javier Mascherano",
+      "dni": "34562452",
+      "direccion": "Su casa",
+      "id": 2
+    },
+    {
+      "nombre": "messis",
+      "direccion": "3434dd",
+      "dni": "3434",
+      "id": 3
+    },
+    {
+      "nombre": "Rodrigo De Paul",
+      "dni": "5246215",
+      "direccion": "Atletico Madrid",
+      "id": 4
+    },
+    {
+      "nombre": "enzo gonzalez",
+      "dni": "3524611",
+      "direccion": "Su casa",
+      "id": 5
+    }
+  ]
+}

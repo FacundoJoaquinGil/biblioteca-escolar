@@ -1,0 +1,267 @@
+*{
+    box-sizing: border-box  ;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.bg-azul{
+    background-color: rgb(38, 70, 83) ;
+}
+.color-claro{
+    color:rgb(215, 202, 250) ;
+}
+.color-claro:hover{
+    color: rgb(177, 214, 14);
+}
+body{
+  
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1533327325824-76bc4e62d560?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxpYnJhcnklMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+/* ESTILOS BARRA DE NAVEGACION  */
+.barra-navegacion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    background-color: rgb(28, 28, 74);
+}
+.contenedor-logo{
+    margin-left: 20px;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 650;
+}
+.contenedor-logo a{
+    text-decoration: none;
+}
+.contenedor-nav{
+    height: 100%;
+    
+}
+.contenedor-nav ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin: 0;
+}
+.contenedor-nav ul li{
+    list-style: none;
+    margin-right: 30px;
+}
+
+.contenedor-nav ul li a{
+    text-decoration: none;
+    font-weight: 600;
+}
+/* bienvenida a la pagina */
+h1 , h2{
+    text-align: center;
+    color:rgb(255, 255, 255) ;
+    margin: 20px;
+    width: 100vw;
+    font-weight: 680;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+}
+h4{
+    text-align: center;
+    color:rgb(255, 255, 255) ;
+    margin: 30px 0;
+    width: 100vw;
+    font-weight: 680;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+
+}
+/* contenedores de enlaces - pagina principal */
+main{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+article a{
+    width: 27vw;
+    height: 20vh;
+    margin: 20px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(15, 28, 34) ;
+    background-color: rgb(28, 28, 74);
+    color:rgb(215, 202, 250) ;
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 18px;
+}
+article a:hover{
+    color: rgb(177, 214, 14);
+}
+/* formulario de alta alumno */
+.form-alta-alumno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    background-color: rgb(28, 28, 74);   
+    padding: 20px;
+    border-radius: 10px;
+}
+.form-alta-alumno h4{
+    color: rgb(215, 202, 250);
+    text-shadow: none;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.form-alta-alumno input{
+    margin: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+.form-alta-alumno button{
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.form-alta-alumno button:hover{
+    background-color: rgb(191, 191, 191);
+}
+/* Listado de alumnos */
+.listado-alumnos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabla-alumnos{
+    margin: 30px;
+    background-color:rgb(28, 28, 74) ;
+    width: 70vw;
+}
+.tabla-alumnos tr{
+    text-align: center;
+    color: rgb(215, 202, 250);
+    border: 1px solid rgb(215, 202, 250);
+}
+.tabla-alumnos th{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 10px;
+}
+.tabla-alumnos td{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 10px;
+}
+.tabla-alumnos td button{
+    width: 30%;
+    margin:0 3px ;
+    border-radius: 3px;
+}
+.tabla-alumnos td button:hover{
+    background-color: rgb(191, 191, 191);
+}
+/* Listado de libros */
+.listado-libros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabla-libros{
+    margin: 30px;
+    background-color:rgb(28, 28, 74) ;
+    width: 70vw;
+}
+.tabla-libros tr{
+    text-align: center;
+    color: rgb(215, 202, 250);
+    border: 1px solid rgb(215, 202, 250);
+}
+.tabla-libros th{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 10px;
+}
+.tabla-libros td{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 7px;
+}
+.tabla-libros td button{
+    padding: 1px 10px;
+    margin:0 5px ;
+    border-radius: 3px;
+}
+.tabla-libros td button:hover{
+    background-color: rgb(191, 191, 191);
+}
+/* Registro de prestamo */
+.listado-prestamo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tabla-prestamo{
+
+    background-color:rgb(28, 28, 74) ;
+    width: 70vw;
+}
+.tabla-prestamo tr{
+    text-align: center;
+    color: rgb(215, 202, 250);
+    border: 1px solid rgb(215, 202, 250);
+}
+.tabla-prestamo th{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 10px;
+}
+.tabla-prestamo td{
+    border: 1px solid rgb(215, 202, 250);
+    padding: 5px;
+}
+
+.tabla-prestamo td button{
+    width: 90%;
+    margin:0 1px ;
+    border-radius: 3px;
+}
+.tabla-prestamo td button:hover{
+    background-color: rgb(191, 191, 191);
+}
+.inputFecha{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(215, 202, 250);
+}
+.inputFecha label{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+.inputFecha select{
+    width: 50%;
+    margin: 10px;
+}
+
+.infoAlumno{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+    color:rgb(255, 255, 255) ;
+    text-shadow: 1px 1px black;
+}
+.select-color{
+    color:rgb(215, 202, 250) ;
+}
+.fondoRojo{
+    background-color: rgba(255, 0, 0, 0.649);
+}
+.fondoVerde{
+    background-color: rgba(4, 119, 4, 0.832);
+}

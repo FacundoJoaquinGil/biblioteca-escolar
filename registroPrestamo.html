@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="./styless.css">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+    <!-- Archivo Js propio -->
+    <script src="./registroPrestamos.js" defer></script>
+</head>
+<body class=" bg-azul">
+
+    <nav class="barra-navegacion ">
+        <div class="contenedor-logo color-claro">
+            <i class="bi bi-book "></i>
+            <a class="color-claro" href="./index.html">Biblioteca Escolar</a>
+        </div>
+        <div class="contenedor-nav">
+            <ul>
+                <li>
+                    <a class="color-claro" href="./index.html">Inicio</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroAlumno.html">Alumnos</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroLibro.html">Libros</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroPrestamo.html">Préstamos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>Registro de prestamo de libro</h1>
+        <form class="form-alta-alumno" action="">
+            <h4>Registrar nuevo prestamo:</h4>
+            <div class="inputFecha">
+                <label class="select-color" for="">Seleccione Libro:</label>
+                <select id="selectLibros" name="libro" >                   
+                </select>
+            </div>
+            <div class="inputFecha">
+                <label class="select-color" for="">Alumno:</label>
+                <select id="selectAlumnos" name="alumno" aria-placeholder="elija opcion"  > 
+                </select>
+            </div>
+            <div class="inputFecha">
+                <label for="fechaEntrega"> Fecha de entrega: </label>
+                <input type="date" id="fechaEntrega" placeholder="Fecha de entrega">
+            </div>
+            <div class="inputFecha">
+                <label for="fechaDevolucion"> Fecha de devolucion: </label>
+                <input type="date" id="fechaDevolucion" placeholder="Fecha de devolucion">
+            </div>
+            <button onclick="guardarPrestamo()">Guardar</button>
+        </form>
+    </main>
+
+    <main>
+        <h2>Reporte de prestamos</h2>
+    </main>
+    <section class="listado-prestamo">
+        <table id="filaPrestamo" class="tabla-prestamo">
+           
+        </table>
+    </section>
+    <main>
+        <h2>Reporte de prestamos vencidos</h2>
+    </main>
+    <section class="listado-prestamo">
+        <table id="filaPrestamoVencido" class="tabla-prestamo">
+           
+        </table>
+    </section>
+    <footer class="infoAlumno">
+        <h5>Alumno: Gil Facundo Joaquin</h5>
+        <h5>Legajo: 55699</h5>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Librerira moment para cambiar el orden del date -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+</body>
+</html>

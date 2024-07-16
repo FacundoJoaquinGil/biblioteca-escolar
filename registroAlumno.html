@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Escolar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Estilos css -->
+    <link rel="stylesheet" href="./styless.css">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Archivo Js propio -->
+    <script src="./registroAlumnos.js" defer></script>
+</head>
+<body class=" bg-azul">
+    <nav class="barra-navegacion ">
+        <div class="contenedor-logo color-claro">
+            <i class="bi bi-book "></i>
+            <a class="color-claro" href="./index.html">Biblioteca Escolar</a>
+        </div>
+        <div class="contenedor-nav">
+            <ul>
+                <li>
+                    <a class="color-claro" href="./index.html">Inicio</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroAlumno.html">Alumnos</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroLibro.html">Libros</a>
+                </li>
+                <li>
+                    <a class="color-claro" href="./registroPrestamo.html">Préstamos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>Registro de Alumnos</h1>
+        <form class="form-alta-alumno">
+            <h4> Dar de alta a un nuevo alumno:</h4>
+            <input type="text" id="nombreAlumno" placeholder="Nombre" required>
+            <input type="text" id="dniAlumno" placeholder="DNI" required>
+            <input type="text" id="direccionAlumno" placeholder="Direccion" required>
+            <button id="btnGuardar" onclick="guardarAlumno()"> Guardar</button>
+            <button id="btnActualizar" onclick="actualizarAlumno()" hidden>Actualizar</button>
+            <button id="btnCancelar" onclick="cancelarEdicion()" type="reset" hidden> Cancelar</button>
+        </form>
+    </main>
+    <section class="listado-alumnos">
+        <table id="filaAlumno" class="tabla-alumnos">
+      
+        </table>
+    </section>
+    <footer class="infoAlumno">
+        <h5>Alumno: Gil Facundo Joaquin</h5>
+        <h5>Legajo: 55699</h5>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
