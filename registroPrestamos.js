@@ -24,8 +24,8 @@ let auxNombreAlumno
 
 // FUNCIONES SECCION PRESTAMO
 async function mostrarSelectLibro() {
-    resp2 = await axios.get("http://localhost:3000/prestamo")
-    resp = await axios.get("http://localhost:3000/libro")
+    resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
+    resp = await axios.get("https://back-biblioteca.vercel.app/libro")
 
 
     selectLibros.innerHTML = `
@@ -41,8 +41,8 @@ async function mostrarSelectLibro() {
      
   }
   async function mostrarSelectAlumno() {
-    resp2 = await axios.get("http://localhost:3000/prestamo")
-    resp = await axios.get("http://localhost:3000/alumno")
+    resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
+    resp = await axios.get("https://back-biblioteca.vercel.app/alumno")
   
 
     selectAlumnos.innerHTML = `
@@ -58,7 +58,7 @@ async function mostrarSelectLibro() {
      
   }
   async function guardarPrestamo() {
-    resp = await axios.post("http://localhost:3000/prestamo", {
+    resp = await axios.post("https://back-biblioteca.vercel.app/prestamo", {
       fechaEntrega: fechaEntrega.value,
       fechaDevolucion: fechaDevolucion.value,
       libroId: selectLibros.value,
@@ -66,9 +66,9 @@ async function mostrarSelectLibro() {
     })
   }
   async function mostrarTodosPrestamos() {
-    resp1 = await axios.get("http://localhost:3000/prestamo")
-    resp2 = await axios.get("http://localhost:3000/libro")
-    resp3 = await axios.get("http://localhost:3000/alumno")
+    resp1 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
+    resp2 = await axios.get("https://back-biblioteca.vercel.app/libro")
+    resp3 = await axios.get("https://back-biblioteca.vercel.app/alumno")
     filaPrestamo.innerHTML = `
   <tr>
      <th scope="col">Título del libro</th>
@@ -144,7 +144,7 @@ async function mostrarSelectLibro() {
   }
   async function borrarPrestamo(id) {
     try {
-      await axios.delete("http://localhost:3000/prestamo/" + id)
+      await axios.delete("https://back-biblioteca.vercel.app/prestamo/" + id)
     } catch {
       alert("Error al borrar")
     }

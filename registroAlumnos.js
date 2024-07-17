@@ -17,7 +17,7 @@ mostrarTodosAlumnos()
 
 // FUNCIONES PARA SECCION DE ALUMNOS
 async function guardarAlumno() {
-    resp = await axios.post("http://localhost:3000/alumno", {
+    resp = await axios.post("https://back-biblioteca.vercel.app/alumno", {
       nombre: nombreAlumno.value,
       dni: dniAlumno.value,
       direccion: direccionAlumno.value,
@@ -25,7 +25,7 @@ async function guardarAlumno() {
     alert("Grabacion OK")
   }
   async function mostrarTodosAlumnos() {
-    resp = await axios.get("http://localhost:3000/alumno")
+    resp = await axios.get("https://back-biblioteca.vercel.app/alumno")
     filaAlumno.innerHTML = `
     <tr>
       <th scope="col">Nombre</th>
@@ -48,8 +48,8 @@ async function guardarAlumno() {
     })
   }
   async function borrarAlumno(id) {
-    resp = await axios.get("http://localhost:3000/alumno/" + id)
-    resp2 = await axios.get("http://localhost:3000/prestamo")
+    resp = await axios.get("https://back-biblioteca.vercel.app/alumno/" + id)
+    resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
     // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN ALUMNO
     if (resp2.data.find((prestamo) => prestamo.alumnoId == id)) {
       alert("No se puede dar de baja el alumno por que tiene un prestamo activo")
@@ -59,8 +59,8 @@ async function guardarAlumno() {
   }
   async function mostrarAlumno(id) {
     auxId = id
-    resp = await axios.get("http://localhost:3000/alumno/" + id)
-    resp2 = await axios.get("http://localhost:3000/prestamo")
+    resp = await axios.get("https://back-biblioteca.vercel.app/alumno/" + id)
+    resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
     // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN ALUMNO
     if (resp2.data.find((prestamo) => prestamo.alumnoId == id)) {
       alert("No se puede editar el alumno por que tiene un prestamo activo")
@@ -77,7 +77,7 @@ async function guardarAlumno() {
     btnActualizar.hidden = true
     btnCancelar.hidden = true
     btnGuardar.hidden = false
-    resp = await axios.put("http://localhost:3000/alumno/" + auxId, {
+    resp = await axios.put("https://back-biblioteca.vercel.app/alumno/" + auxId, {
       nombre: nombreAlumno.value,
       direccion: direccionAlumno.value,
       dni: dniAlumno.value,

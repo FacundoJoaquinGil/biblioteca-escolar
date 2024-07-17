@@ -37,7 +37,7 @@ mostrarTodosPrestamos()
 
 // FUNCIONES PARA SECCION DE ALUMNOS
 async function guardarAlumno() {
-  resp = await axios.post("http://localhost:3000/alumno", {
+  resp = await axios.post("https://back-biblioteca.vercel.app/alumno", {
     nombre: nombreAlumno.value,
     dni: dniAlumno.value,
     direccion: direccionAlumno.value,
@@ -45,7 +45,7 @@ async function guardarAlumno() {
   alert("Grabacion OK")
 }
 async function mostrarTodosAlumnos() {
-  resp = await axios.get("http://localhost:3000/alumno")
+  resp = await axios.get("https://back-biblioteca.vercel.app/alumno")
   filaAlumno.innerHTML = `
   <tr>
     <th scope="col">Nombre</th>
@@ -68,19 +68,19 @@ async function mostrarTodosAlumnos() {
   })
 }
 async function borrarAlumno(id) {
-  resp = await axios.get("http://localhost:3000/alumno/" + id)
-  resp2 = await axios.get("http://localhost:3000/prestamo")
+  resp = await axios.get("https://back-biblioteca.vercel.app/alumno/" + id)
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
   // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN ALUMNO
   if (resp2.data.find((prestamo) => prestamo.alumnoId == id)) {
     alert("No se puede dar de baja el alumno por que tiene un prestamo activo")
   } else {
-    await axios.delete("http://localhost:3000/alumno/" + id)
+    await axios.delete("https://back-biblioteca.vercel.app/alumno/" + id)
   }
 }
 async function mostrarAlumno(id) {
   auxId = id
-  resp = await axios.get("http://localhost:3000/alumno/" + id)
-  resp2 = await axios.get("http://localhost:3000/prestamo")
+  resp = await axios.get("https://back-biblioteca.vercel.app/alumno/" + id)
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
   // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN ALUMNO
   if (resp2.data.find((prestamo) => prestamo.alumnoId == id)) {
     alert("No se puede editar el alumno por que tiene un prestamo activo")
@@ -97,7 +97,7 @@ async function actualizarAlumno() {
   btnActualizar.hidden = true
   btnCancelar.hidden = true
   btnGuardar.hidden = false
-  resp = await axios.put("http://localhost:3000/alumno/" + auxId, {
+  resp = await axios.put("https://back-biblioteca.vercel.app/alumno/" + auxId, {
     nombre: nombreAlumno.value,
     direccion: direccionAlumno.value,
     dni: dniAlumno.value,
@@ -110,7 +110,7 @@ function cancelarEdicion(){
 }
 // FUNCIONES PARA SECCION DE LIBROS
 async function guardarLibro() {
-  resp = await axios.post("http://localhost:3000/libro", {
+  resp = await axios.post("https://back-biblioteca.vercel.app/libro", {
     titulo: tituloLibro.value,
     autor: autorLibro.value,
     
@@ -120,8 +120,8 @@ async function guardarLibro() {
 
 }
 async function mostrarTodosLibros() {
-  resp = await axios.get("http://localhost:3000/libro")
-  resp2 = await axios.get("http://localhost:3000/prestamo")
+  resp = await axios.get("https://back-biblioteca.vercel.app/libro")
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
   filaLibro.innerHTML = `
    <tr>
     <th scope="col">Título del libro</th>
@@ -150,19 +150,19 @@ async function mostrarTodosLibros() {
   })
 }
 async function borrarLibro(id) {
-  resp = await axios.get("http://localhost:3000/libro/" + id)
-  resp2 = await axios.get("http://localhost:3000/prestamo")
+  resp = await axios.get("https://back-biblioteca.vercel.app/libro/" + id)
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
     // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN LIBRO
   if (resp2.data.find((prestamo) => prestamo.libroId == id)) {
     alert("No se puede borrar el libro por que esta activo en un prestamo")
   } else {
-    await axios.delete("http://localhost:3000/libro/" + id)
+    await axios.delete("https://back-biblioteca.vercel.app/libro" + id)
   }
 }
 async function mostrarLibro(id) {
   auxId = id
-  resp = await axios.get("http://localhost:3000/libro/" + id)
-  resp2 = await axios.get("http://localhost:3000/prestamo")
+  resp = await axios.get("https://back-biblioteca.vercel.app/libro/" + id)
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
      // ME FIJO SI DENTRO DE LA TABLA DE PRESTAMOS HAY ALGUN ALUMNOID CON EL MISMO ID QUE ALGUN LIBRO
   if (resp2.data.find((prestamo) => prestamo.libroId == id)) {
     alert("No se puede editar el libro por que esta activo en un prestamo")
@@ -178,14 +178,14 @@ async function actualizarLibro() {
   btnActualizar.hidden = true
   btnCancelar.hidden = true
   btnGuardar.hidden = false
-  resp = await axios.put("http://localhost:3000/libro/" + auxId, {
+  resp = await axios.put("https://back-biblioteca.vercel.app/libro/" + auxId, {
     titulo: tituloLibro.value,
     autor: autorLibro.value,
   })
 }
 // FUNCIONES SECCION PRESTAMO
 async function mostrarSelectLibro() {
-  resp = await axios.get("http://localhost:3000/libro")
+  resp = await axios.get("https://back-biblioteca.vercel.app/libro")
   selectLibros.innerHTML = `
    <option disabled selected>Selecciona una opción</option>
    `
@@ -196,7 +196,7 @@ async function mostrarSelectLibro() {
   })
 }
 async function mostrarSelectAlumno() {
-  resp = await axios.get("http://localhost:3000/alumno")
+  resp = await axios.get("https://back-biblioteca.vercel.app/alumno")
   selectAlumnos.innerHTML = `
   <option disabled selected>Selecciona una opción</option>
   `
@@ -207,7 +207,7 @@ async function mostrarSelectAlumno() {
   })
 }
 async function guardarPrestamo() {
-  resp = await axios.post("http://localhost:3000/prestamo", {
+  resp = await axios.post("https://back-biblioteca.vercel.app/prestamo", {
     fechaEntrega: fechaEntrega.value,
     fechaDevolucion: fechaDevolucion.value,
     libroId: selectLibros.value,
@@ -215,9 +215,9 @@ async function guardarPrestamo() {
   })
 }
 async function mostrarTodosPrestamos() {
-  resp1 = await axios.get("http://localhost:3000/prestamo")
-  resp2 = await axios.get("http://localhost:3000/libro")
-  resp3 = await axios.get("http://localhost:3000/alumno")
+  resp1 = await axios.get("https://back-biblioteca.vercel.app/prestamo")
+  resp2 = await axios.get("https://back-biblioteca.vercel.app/libro")
+  resp3 = await axios.get("https://back-biblioteca.vercel.app/alumno")
   filaPrestamo.innerHTML = `
 <tr>
    <th scope="col">Título del libro</th>
@@ -294,7 +294,7 @@ async function mostrarTodosPrestamos() {
 }
 async function borrarPrestamo(id) {
   try {
-    await axios.delete("http://localhost:3000/prestamo/" + id)
+    await axios.delete("https://back-biblioteca.vercel.app/prestamo/" + id)
   } catch {
     alert("Error al borrar")
   }

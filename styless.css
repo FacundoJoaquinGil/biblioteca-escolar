@@ -139,7 +139,7 @@ article a:hover{
     align-items: center;
 }
 .tabla-alumnos{
-    margin: 30px;
+    margin-top: 20px;
     background-color:rgb(28, 28, 74) ;
     width: 70vw;
 }
@@ -150,19 +150,20 @@ article a:hover{
 }
 .tabla-alumnos th{
     border: 1px solid rgb(215, 202, 250);
-    padding: 10px;
+    margin-top: 10px;
 }
 .tabla-alumnos td{
     border: 1px solid rgb(215, 202, 250);
-    padding: 10px;
 }
 .tabla-alumnos td button{
     width: 30%;
-    margin:0 3px ;
-    border-radius: 3px;
+    background-color: rgb(0, 157, 255);
+    border-radius: 50px;
+    color: white;
 }
 .tabla-alumnos td button:hover{
-    background-color: rgb(191, 191, 191);
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 /* Listado de libros */
 .listado-libros{
@@ -201,9 +202,10 @@ article a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .tabla-prestamo{
-
+    
     background-color:rgb(28, 28, 74) ;
     width: 70vw;
 }
@@ -218,33 +220,37 @@ article a:hover{
 }
 .tabla-prestamo td{
     border: 1px solid rgb(215, 202, 250);
-    padding: 5px;
+    
 }
 
 .tabla-prestamo td button{
     width: 90%;
-    margin:0 1px ;
-    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
 }
 .tabla-prestamo td button:hover{
-    background-color: rgb(191, 191, 191);
+    background-color: rgb(0, 166, 255);
+    color: white;
 }
 .inputFecha{
     display: flex;
-    width: 70%;
+    width: 50%;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: rgb(215, 202, 250);
+    margin: 10px;
 }
 .inputFecha label{
     width: 50%;
     display: flex;
     justify-content: end;
+    margin-right: 5px;
+    
 }
 .inputFecha select{
     width: 50%;
-    margin: 10px;
+    
 }
 
 .infoAlumno{
@@ -252,7 +258,7 @@ article a:hover{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 100px;
     color:rgb(255, 255, 255) ;
     text-shadow: 1px 1px black;
 }
